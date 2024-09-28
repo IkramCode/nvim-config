@@ -3,12 +3,13 @@ local lsp = require("lsp-zero")
 -- Load the "recommended" preset for sensible defaults
 lsp.preset("recommended")
 
--- Ensure specific LSP servers are installed, including TypeScript (ts_ls)
+-- Ensure specific LSP servers are installed, including TypeScript (ts_ls) and Python (pyright)
 lsp.ensure_installed({
-  'ts_ls',           -- Updated from 'tsserver' to 'ts_ls' for TypeScript/JavaScript
+  'ts_ls',           -- TypeScript/JavaScript server
   'eslint',          -- ESLint for linting JavaScript/TypeScript
   'lua_ls',          -- Lua server (formerly sumneko_lua)
   'rust_analyzer',   -- Rust server
+  'pyright',         -- Python server
 })
 
 -- Set up nvim-cmp for autocompletion with custom key mappings
@@ -53,10 +54,19 @@ lsp.setup()
 
 -- Optionally, you can configure specific settings for TypeScript/JavaScript
 require('lspconfig').ts_ls.setup({
-  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }, -- Enable both JS and TS
+  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   root_dir = require('lspconfig.util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   on_attach = function(client, bufnr)
     -- Additional custom settings can be added here for ts_ls if needed
+  end
+})
+
+-- Configure settings for Python using pyright
+require('lspconfig').pyright.setup({
+  filetypes = { "python" }, -- Enable Python files
+  root_dir = require('lspconfig.util').root_pattern("setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"),
+  on_attach = function(client, bufnr)
+    -- Additional custom settings can be added here for pyright if needed
   end
 })
 
