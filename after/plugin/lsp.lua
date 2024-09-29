@@ -10,6 +10,7 @@ lsp.ensure_installed({
   'lua_ls',          -- Lua server (formerly sumneko_lua)
   'rust_analyzer',   -- Rust server
   'pyright',         -- Python server
+   'gopls',           -- Go language server
 })
 
 -- Set up nvim-cmp for autocompletion with custom key mappings
@@ -18,7 +19,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -67,6 +68,23 @@ require('lspconfig').pyright.setup({
   root_dir = require('lspconfig.util').root_pattern("setup.py", "setup.cfg", "pyproject.toml", "requirements.txt", ".git"),
   on_attach = function(client, bufnr)
     -- Additional custom settings can be added here for pyright if needed
+  end
+})
+-- Configure settings for Go using gopls
+require('lspconfig').gopls.setup({
+  filetypes = { "go", "gomod", "gowork", "gotmpl" }, -- Enable Go files
+  root_dir = require('lspconfig.util').root_pattern("go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true, -- Enable completion for unimported packages
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true
+      }
+    }
+  },
+  on_attach = function(client, bufnr)
+    -- You can add additional on_attach functionality here if needed
   end
 })
 
