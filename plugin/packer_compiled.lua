@@ -84,6 +84,12 @@ _G.packer_plugins = {
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["copilot.vim"] = {
+    config = { "\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0" },
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -167,6 +173,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: copilot.vim
+time([[Config for copilot.vim]], true)
+try_loadstring("\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0", "config", "copilot.vim")
+time([[Config for copilot.vim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

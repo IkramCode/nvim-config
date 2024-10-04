@@ -63,6 +63,14 @@ require('packer').startup(function(use)
     -- Game to improve your Vim skills
     use 'ThePrimeagen/vim-be-good'
 
+    use {
+  "github/copilot.vim",
+  config = function()
+    vim.g.copilot_no_tab_map = true  -- prevents conflicts with Tab key
+    vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+  end
+}
+
     -- Sync packer if this is the first run
     if packer_bootstrap then
         require('packer').sync()
