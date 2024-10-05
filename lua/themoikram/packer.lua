@@ -24,13 +24,14 @@ require('packer').startup(function(use)
     }
 
     -- Rose Pine color scheme
-    use {
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    }
+    --use {
+        --'rose-pine/neovim',
+        --as = 'rose-pine',
+        --config = function()
+            --vim.cmd('colorscheme rose-pine')
+        --end
+    --}
+    use "EdenEast/nightfox.nvim" -- Packer
 
     -- Treesitter for better syntax highlighting
     use {
