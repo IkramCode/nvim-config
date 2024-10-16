@@ -84,8 +84,13 @@ _G.packer_plugins = {
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["copilot.vim"] = {
-    config = { "\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0" },
+    config = { "\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\vsilent\2\texpr\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0" },
     loaded = true,
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
@@ -120,10 +125,30 @@ _G.packer_plugins = {
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "/home/moikram/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -170,7 +195,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: copilot.vim
 time([[Config for copilot.vim]], true)
-try_loadstring("\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\texpr\2\vsilent\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0", "config", "copilot.vim")
+try_loadstring("\27LJ\2\n˜\1\0\0\6\0\t\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0'\3\6\0'\4\a\0005\5\b\0B\0\5\1K\0\1\0\1\0\2\vsilent\2\texpr\2\27copilot#Accept(\"<CR>\")\n<C-J>\6i\20nvim_set_keymap\bapi\23copilot_no_tab_map\6g\bvim\0", "config", "copilot.vim")
 time([[Config for copilot.vim]], false)
 
 _G._packer.inside_compile = false

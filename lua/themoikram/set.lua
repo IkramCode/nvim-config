@@ -2,6 +2,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.guicursor = "n-v-c-i:block,r-cr:hor20,o:hor50"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

@@ -5,12 +5,13 @@ lsp.preset("recommended")
 
 -- Ensure specific LSP servers are installed, including TypeScript (ts_ls) and Python (pyright)
 lsp.ensure_installed({
-  'ts_ls',           -- TypeScript/JavaScript server
-  'eslint',          -- ESLint for linting JavaScript/TypeScript
-  'lua_ls',          -- Lua server (formerly sumneko_lua)
-  'rust_analyzer',   -- Rust server
-  'pyright',         -- Python server
-   'gopls',           -- Go language server
+    'ts_ls',           -- TypeScript/JavaScript server
+    'eslint',          -- ESLint for linting JavaScript/TypeScript
+    'lua_ls',          -- Lua server (formerly sumneko_lua)
+    'rust_analyzer',   -- Rust server
+    'pyright',         -- Python server
+    'gopls',           -- Go language server
+    'clangd', -- Add C++ language server 
 })
 
 -- Set up nvim-cmp for autocompletion with custom key mappings
@@ -70,6 +71,18 @@ require('lspconfig').pyright.setup({
     -- Additional custom settings can be added here for pyright if needed
   end
 })
+
+--Configure settings for Cpp using clangd
+require('lspconfig').clangd.setup{
+  on_attach = function(client, bufnr)
+    local opts = { buffer = bufnr }
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = {"*.cpp", "*.h"},
+      callback = function() vim.lsp.buf.format() end
+    })
+  end
+}
+
 -- Configure settings for Go using gopls
 require('lspconfig').gopls.setup({
   filetypes = { "go", "gomod", "gowork", "gotmpl" }, -- Enable Go files
